@@ -1,0 +1,52 @@
+<% include partials/header %> 
+ <style>
+ body{
+background-image:url(https://img3.akspic.com/image/109796-grey-line-text-monochrome-pattern-1920x1080.jpg);
+	font-family: "Nunito", sans-serif;
+	color:white;
+	
+}
+input{
+  border-radius: 5px;
+  border: 0.5px inset gray;
+  color:black;
+}
+	.btn-primary {
+	  background-color:black !important;
+	  border-color:gray !important;
+ }
+ .container {
+    padding-right: 25%;
+    padding-left: 25%;
+    margin-right: auto;
+    margin-left: auto;
+}
+</style>
+<form action="/login" method="POST">
+  <div class="container">
+    <br><h1>Login</h1>
+    
+    <hr style="color: black";>
+
+    <table class="feedtable">
+    <tr>
+    <th><b>Username</b> </th>
+    <th><input type="name" placeholder=" Username" name="username" required></br></th>
+    </br>
+    
+    <tr>
+    <th><b>Password</b></th>
+    <th><input type="password" placeholder=" Password" name="password" required></th>
+    </tr> 
+    </table>
+    
+    <hr style="color: black";>
+    <br><button type="submit" class="btn btn-primary md-2">Login</button>
+  </div>
+    </br>
+  <div class="container signin">
+    <p>Don't have an account? <strong><a href="/cycles/signup" style="color: black";>Signup here</a></strong>.</p>
+  </div>
+  <br><br><br><br>
+</form>
+<% include partials/footer %> 

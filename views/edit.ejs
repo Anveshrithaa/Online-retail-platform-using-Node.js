@@ -1,0 +1,83 @@
+<% include partials/header %>
+<style>
+    body{
+	background-image:url(https://img3.akspic.com/image/109796-grey-line-text-monochrome-pattern-1920x1080.jpg);
+	font-family: "Nunito", sans-serif;
+}
+	.btn-info {
+	  background-color:black !important;
+	  border-color:gray !important;
+ }
+ .cont{
+     background-color:#dadee6;
+     margin-left:30%;
+     margin-right:30%;
+     padding:2%;
+     margin-bottom:5%;
+     border-radius:5px;
+     border: 1px groove black;
+ }
+ .form-control{
+     border: 0.5px inset lightgray;
+ }
+  
+</style>
+<div class="container">
+    <div class="row">
+<h1 style="text-align:center; color:white;"> Modify cycle details</h1><br>
+<div class="cont">
+<div style="width: 70%; margin: 15%; margin-top:5%; margin-bottom:1%;">
+<form action="/cycles/<%= cycle._id %>?_method=PUT" method="POST">
+    <div class="form-group">
+    <input class="form-control" type="text" name="cycles[brand]" placeholder="Cycle Brand name" value="<%= cycle.brand %>">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="cycles[model]" placeholder="Cycle model name" value="<%= cycle.model %>">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="cycles[date]" placeholder="Date of purchase" value="<%= cycle.date %>">
+    </div>
+    
+    
+    <div class="form-group">
+    <input class="form-control" type="text" name="cycles[city]" placeholder="City" value="<%= cycle.city %>">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="cycles[state]" placeholder="State" value="<%= cycle.state %>">
+    </div>
+    
+    <div class="form-group">
+    <input class="form-control" type="text" name="cycles[phone]" placeholder="Phone number" value="<%= cycle.phone %>">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="email" name="cycles[mail]" placeholder="E-mail" value="<%= cycle.mail %>">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="cycles[war]" placeholder="Warranty period" value="<%= cycle.war %>">
+    </div>
+    
+    <div class="form-group">
+    
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="descrip" rows="3" placeholder="Description" value="<%= cycle.descrip %>"></textarea>
+  </div>
+  
+  <div class="form-group">
+    <input class="form-control" type="text" name="cycles[image]" placeholder="Image URL" value="<%= cycle.image %>">
+    </div>
+    <div class="form-group" style="text-align:center">
+    <button class="btn btn-md btn-info">Submit</button>
+    </div>
+</form>
+<a href="/cycles">Go back</a>
+</div>
+</div>
+</div>
+</div>
+<% include partials/footer %>
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+<% include partials/header %> 
+<style>
+body{
+    	background-image:url(https://img3.akspic.com/image/109796-grey-line-text-monochrome-pattern-1920x1080.jpg);
+    	background-repeat: no-repeat;
+                background-size: cover;
+}
+.btn-info{
+    background-color:gray !important;
+    border: 1px inset gray; !important;
+    font-family: "Nunito", sans-serif;
+}
+.caption{
+    font-family: "Nunito", sans-serif;
+    
+}
+</style>
+ <div class="container">
+     
+     <header class="jumbotron">
+         <div class="container">
+             <h1 id="bc">Welcome to Buy-Cycle!</h1>
+             <p>A platform to buy and sell your cycles!</p>
+             
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% cycles.forEach(function(cycles){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail" id="thumb">
+                   <img src="<%= cycles.image %>">
+                   <div class="caption">
+                       <h4><b><%= cycles.brand %></b></h4>
+                   </div>
+                   <p>
+                       <a href="/cycles/<%= cycles._id %>" class="btn btn-info btn-xs">More details</a>
+                   </p>
+                   
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,25 @@
+<% include partials/header %> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1><%= user.username %></h1>
+                
+                Lorem ipsum dolor sit amet, pri aliquip delenit at, ei eos bonorum splendide,
+                omnis ancillae electram mea te. Qui scribentur efficiantur intellegebat et. 
+                Te quo ubique intellegam, eam repudiare gubergren repudiandae cu, ex eos denique commune.
+                
+                Lorem ipsum dolor sit amet, pri aliquip delenit at, ei eos bonorum splendide,
+                omnis ancillae electram mea te. Qui scribentur efficiantur intellegebat et. 
+                Te quo ubique intellegam, eam repudiare gubergren repudiandae cu, ex eos denique commune. 
+            </div>
+            <div class="col-md-8">
+                <h3><%= user.username %>'s cycles:</h3>
+                <ul>
+                    <% cycles.forEach(function(cycle) { %>
+                        <li><a href="/cycles/<%= cycle.id %>"></a></li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </div>    
+

@@ -1,0 +1,48 @@
+<% include ../partials/header %>
+<style>
+    body{
+        background-image:url(https://img3.akspic.com/image/109796-grey-line-text-monochrome-pattern-1920x1080.jpg);
+    }
+    .form-control{
+        border: 1px inset gray;
+        border-radius:5px;
+    }
+    .con{
+        background-color:#dadee6;
+     margin-left:30%;
+     margin-right:30%;
+     padding:2%;
+     margin-top:3%;
+     margin-bottom:5%;
+     border-radius:5px;
+     border: 1px groove black;
+    }
+    	.btn-info {
+	  background-color:black !important;
+	  border-color:gray !important;
+ }
+</style>
+<div class="container">
+    <div class="row">
+<h1 style="text-align:center;color:white;"> Edit your query</h1>
+<div class="con">
+<div style="width: 70%; margin: 15%; margin-top:5%; margin-bottom:1%;">
+<form action="/cycles/<%= cycles_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+    <div class="form-group">
+    <input class="form-control" type="text" name="comment[author]" value="<%= comment.author %>">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>">
+    </div>
+    
+    <div class="form-group" style="text-align:center">
+    <button class="btn btn-md btn-info">Submit</button>
+    </div>
+</form>
+<a href="/cycles">Go back</a>
+</div>
+</div>
+</div>
+</div>
+<% include ../partials/footer %>
+

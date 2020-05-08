@@ -1,0 +1,78 @@
+<% include partials/header %>
+<style>
+    body{
+	background-image:url(https://img3.akspic.com/image/109796-grey-line-text-monochrome-pattern-1920x1080.jpg);
+	font-family: "Nunito", sans-serif;
+}
+	.btn-primary {
+	  background-color:black !important;
+	  border-color:gray !important;
+ }
+ .cont{
+     background-color:#dadee6;
+     margin-left:30%;
+     margin-right:30%;
+     padding:2%;
+     margin-bottom:5%;
+     border-radius:5px;
+     border: 1px groove black;
+ }
+ .form-control{
+     border: 0.5px inset lightgray;
+ }
+  
+</style>
+<div class="container">
+    <div class="row">
+      
+<h1 style="text-align:center; color:white;"> Sell your cycle</h1><br>
+<div class="cont">
+<div style="width: 70%; margin: 15%; margin-top:5%; margin-bottom:1%;">
+<form action="/cycles" method="POST">
+    <div class="form-group">
+    <input class="form-control" type="text" name="brand" placeholder="Cycle Brand name">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="model" placeholder="Cycle model name">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="date" placeholder="Date of purchase">
+    </div>
+    
+    
+    <div class="form-group">
+    <input class="form-control" type="text" name="city" placeholder="City">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="state" placeholder="State">
+    </div>
+    
+    <div class="form-group">
+    <input class="form-control" type="text" name="phone" placeholder="Phone number">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="email" name="mail" placeholder="E-mail">
+    </div>
+    <div class="form-group">
+    <input class="form-control" type="text" name="war" placeholder="Warranty period">
+    </div>
+    
+    <div class="form-group">
+    
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="descrip" rows="3" placeholder="Description"></textarea>
+  </div>
+  
+  <div class="form-group">
+    <input class="form-control" type="text" name="image" placeholder="Image URL">
+    </div>
+    <div class="form-group" style="text-align:center">
+    <button class="btn btn-md btn-primary">Submit</button>
+    </div>
+</form>
+<a href="/cycles" ><b>Go back</b></a>
+</div>
+</div>
+</div>
+</div>
+<% include partials/footer %>
+

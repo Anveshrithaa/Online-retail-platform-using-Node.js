@@ -1,0 +1,60 @@
+<% include partials/header %> 
+<style>
+    body{
+	background-image:url(https://img3.akspic.com/image/109796-grey-line-text-monochrome-pattern-1920x1080.jpg);
+	font-family: "Nunito", sans-serif;
+	color:white;
+}
+	.btn-primary {
+	  background-color:black !important;
+ }
+ input,textarea{
+   border-radius:5px;
+   border: 0.5px inset gray;
+ }
+</style>
+<form>
+  <center>
+  <div class="container">
+    <h1>Give your feedback</h1>
+    <p>Please fill in this form and give your feedback.</p>
+    <hr>
+    <br><br>
+    
+    
+<table class="feedtable">
+  <tr>
+    <th><label for="Name ">Name</label></th>
+    <th><input type="Name"  name="Name" required></br>
+    </br></th>
+    </tr>
+    <tr>
+    <th><label for="Email ">Email</label></th>
+    <th><input type="Email" name="Email" required></br>
+    </br></th>
+    </tr>
+    <tr>
+      <th><label for="Feedback ">Feedback</label><br></th>
+    <th><textarea rows="4" cols="50">
+     </textarea></th>
+    </tr>
+    </table>
+
+    
+    </br>
+        <button type="submit" class="btn btn-primary mb-2" onclick="feed();">Submit</button>
+  
+    </br>
+  
+  </div>
+  </center>
+  <br><br><br><br><br><br><br><br>
+
+
+  
+</form>
+<script>
+  function feed(){
+    alert("Thank you for the feedback");
+  }
+</script>

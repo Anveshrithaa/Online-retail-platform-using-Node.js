@@ -1,0 +1,100 @@
+<% include partials/header %> 
+<style>
+    body{
+        background-color: #2a303d;
+       
+    }
+    .caption-full{
+        background-color: #dce0e8;
+        line-height: 30px;
+        color:black;
+        font-family: "Nunito", sans-serif;
+    }
+    .thumbnail{
+        border:2px solid white;
+    }
+    .img-responsive{
+        border-bottom:2px solid black;
+    }
+    .well{
+         background-color: #dce0e8;
+        color:black;
+        font-family: "Nunito", sans-serif;
+       
+    }
+    hr{
+        border: 0.5px solid gray;
+    }
+    .btn-primary{
+        margin-left:5px;
+        
+    }
+   
+    
+</style>
+
+<div class="container">
+    <div class="row" >
+        <div class="col-md-6" id="showbox">
+            
+            <div class="thumbnail">
+                <img class="img-responsive" src= "<%= cycles.image %>">
+                <div class="caption-full">
+                    <h2 style="text-align:left;"><%= cycles.brand %></h2>
+                    <p>
+                        Brand: <%= cycles.brand %><br>
+                        Model: <%= cycles.model %><br>
+                        Year bought: <%= cycles.date %><br>
+                        Place: <%= cycles.city %>, <%= cycles.state %><br>
+                        Warranty: <%= cycles.war %><br>
+                        <% if(currentUser){ %>
+                        Phone no: <%= cycles.phone %><br>
+                        email: <%= cycles.mail %><br>
+                        <% } else { %>
+                        Phone no.: +91- ********** <a href="/login">Show number</a><br>
+                        email: <a href="login">Show mail Id</a><br>
+                        <% } %>
+                        <h3>Description</h3>
+                        <p><%= cycles.descrip %>
+                        </p>
+                    </p>
+                </div>
+                <% if(currentUser && cycles.author.id.equals(currentUser._id)){ %>
+                <a style="width:49%;" class="btn btn-primary" href="/cycles/<%= cycles._id %>/edit">Edit</a>
+                <form style="display:inline;" action="/cycles/<%= cycles._id %>?_method=DELETE" method= "POST">
+                 <button style="width:49%;" class="btn btn-danger">Delete</button>
+                 </form>
+                 <% } %>
+            </div>
+           
+            
+        </div>
+        <div class="col-md-6">
+            <div class="well">
+                <div style="text-align:right;">
+                    <a class="btn btn-success btn-md"  href="/cycles/<%= cycles._id %>/comments/new">Ask queries  <span class="glyphicon glyphicon-comment"></span></a>
+                </div>
+                 <hr>
+                <% cycles.comments.forEach(function(comment){ %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <b><%= comment.author %> </b>
+                        <p><%= comment.text %></p>
+                        
+                        <a class="btn btn-xs btn-primary pull-right" href="/cycles/<%= cycles._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                        <form style="display:inline;" action="/cycles/<%= cycles._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                            <input type="submit" class="btn btn-xs btn-danger pull-right" value="Delete" >
+                        </form>
+                     
+                    </div>
+                </div>
+                <hr>
+               <% }) %>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+

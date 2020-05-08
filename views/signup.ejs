@@ -1,0 +1,59 @@
+ <% include partials/header %> 
+ <style>
+ body{
+	background-image:url(https://img3.akspic.com/image/109796-grey-line-text-monochrome-pattern-1920x1080.jpg);
+	font-family: "Nunito", sans-serif;
+	color:white;
+}
+input{
+  border-radius: 5px;
+  border: 0.5px inset gray;
+  color: black;
+}
+	.btn-primary {
+	  background-color:black !important;
+	  border-color:gray !important;
+	  color: white !important;
+ }
+ .container {
+    padding-right: 25%;
+    padding-left: 25%;
+    margin-right: auto;
+    margin-left: auto;
+}
+</style>
+<form action="/signup" method="post">
+  <div class="container">
+    <br><h1>Sign Up</h1>
+    
+    <hr style="color: black";>
+
+    <table class="feedtable">
+    <tr>
+    <th><b>Username</b> </th>
+    <th><input type="name" placeholder=" Username" name="username" required></br></th>
+    </br>
+    
+    <tr>
+    <th><br><b>Email</b></th>
+    <th><br><input type="email" placeholder=" Email" name="email" required></br></th>
+    </br>
+    </tr>
+    
+    <tr>
+    <th><br><b>Password</b></th>
+    <th><br><input type="password" placeholder=" Password" name="password" required></th>
+    </tr> 
+    </table>
+    <br>
+    <hr style="color: black";>
+    </br>
+    <input type="checkbox"> By creating an account you agree to our <strong><a href="terms" style="color: black";>Terms & conditions</a></strong><br>
+    <br><button type="submit" class="btn btn-primary md-2">Sign up</button>
+  </div>
+    </br>
+  <div class="container signin">
+    <p>Already have an account? <strong><a href="/cycles/login" style="color: black";>Login here</a></strong>.</p>
+  </div>
+  <br><br><br><br>
+</form>

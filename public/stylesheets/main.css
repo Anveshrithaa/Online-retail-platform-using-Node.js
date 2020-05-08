@@ -1,0 +1,19 @@
+.thumbnail img{
+    width: 100%;
+}
+.thumbnail{
+    padding: 0;
+    
+}
+
+.thumbnail .caption-full{
+    padding:10px;
+}
+#feed{
+    margin-left:30%;
+    margin-right:35%;
+}
+
+tr, th{
+    padding:10px;
+}
